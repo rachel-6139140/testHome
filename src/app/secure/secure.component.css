@@ -1,0 +1,10 @@
+mat-card{
+    padding-left: 50px;
+}
+mat-card.mat-card {
+    max-width: 100px;
+    display: inline-block;
+}
+div{
+    display: inline-block;
+}

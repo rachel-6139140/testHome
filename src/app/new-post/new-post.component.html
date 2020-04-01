@@ -1,0 +1,35 @@
+<div class="row">
+    <form #newPostForm="ngForm" (submit)="onAddPost(newPostForm.value)">
+      <mat-form-field><input 
+        matInput 
+        placeholder="name" 
+        type="text" 
+        ngModel="" 
+        name="name" 
+        required 
+        maxlength="30"  
+        pattern="[a-zA-Z ]*"></mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>category movie</mat-label>
+    
+        <mat-select>
+          <mat-option *ngFor="let category of categogies" [value]="category" name="category" >
+            {{category.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+<br>
+      <mat-form-field><input matInput placeholder="post url" type="url" 
+        pattern="https://www.imdb.com/(?:t|T)itle(?:\?|/)(..\d+)\"
+         ngModel="" name="postPath" required></mat-form-field>
+      <!-- <img src="postPath" alt="" width="50px" height="50px"> -->
+      <br>
+      <mat-form-field><input matInput placeholder="imdb url" type="url" pattern="http://(?:.*\.|.*)imdb.com/(?:t|T)itle(?:\?|/)(..\d+)\" ngModel="" name="imdb" required></mat-form-field>
+      <br>
+      <button mat-button type="submit">Add</button>
+      <button mat-button (click)="onCancel()">Cancel</button>
+
+    </form>
+    </div>

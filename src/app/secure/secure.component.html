@@ -1,0 +1,18 @@
+
+<aside>
+  <p>welcome to admin</p>
+    <button mat-button (click)="onAddMovie()">add movie</button>
+    <button mat-button *ngFor="let category of categogies">{{category}}</button>
+</aside>
+<div class="row"><div class="col-sm-3">
+<mat-card *ngFor="let movie of posts">
+    <mat-card-title>{{movie.name}}</mat-card-title>
+    <mat-card-subtitle>{{movie.category}}</mat-card-subtitle>
+        <img mat-card-image [src]="movie.postPath" alt="Card image cap" style="width: 30%;height: 30%;">
+        <mat-card-actions>
+            <a [href]="movie.imdb" class="btn btn-primary">link to movie</a>
+            <button mat-button (click)="onDelete(movie.id)">delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div></div>
+
